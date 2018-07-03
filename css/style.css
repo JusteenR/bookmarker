@@ -5,6 +5,13 @@
   background-color: #3AAFB9;
 }
 
+#selection {
+  color: white;
+  border-radius: 5px;
+  padding: 14px;
+  background-color: #3AAFB9;
+}
+
 .radio {
   color: black;
   margin-right: 30px;

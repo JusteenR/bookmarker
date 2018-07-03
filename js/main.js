@@ -111,6 +111,7 @@ function deleteBookmark(url){
 function fetchBookmarks(){
   // Get bookmarks from localStorage
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+  if (bookmarks === null){return;}
 
   // Organizes the bookmarks
   switch(option){
@@ -170,6 +171,11 @@ function validate(siteName, siteUrl){
 function duplicates(siteName, siteUrl) {
   // Get from localStorage
   var bookmarks = JSON.parse(localStorage.getItem('bookmarks'));
+
+  // If there is nothing in the bookmarks there are no duplicates
+  if (bookmarks === null){
+    return true;
+  }
   //Loop through bookmarks
   for (var i = 0; i < bookmarks.length; i++) {
     if (siteUrl == bookmarks[i].url) {
